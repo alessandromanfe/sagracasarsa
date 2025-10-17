@@ -29,7 +29,7 @@
             background-image: url('assets/Sagra-1.jpg'); /* Update this path to your image */
             background-size: cover;
             background-position: center;
-            filter: blur(10px);
+            filter: blur(3px);
             transform: scale(1.1);
             z-index: -2;
         }
@@ -199,6 +199,9 @@
                         <div class="flip-card">
                             <div class="flip-card-inner" id="days2">0</div>
                         </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner" id="days3">0</div>
+                        </div>
                     </div>
                     <div class="label">Giorni</div>
                 </div>
@@ -268,7 +271,7 @@
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             // Format to always show 2 digits
-            const daysStr = String(days).padStart(2, '0');
+            const daysStr = String(days).padStart(3, '0');
             const hoursStr = String(hours).padStart(2, '0');
             const minutesStr = String(minutes).padStart(2, '0');
             const secondsStr = String(seconds).padStart(2, '0');
@@ -276,6 +279,7 @@
             // Update display
             document.getElementById('days1').textContent = daysStr[0];
             document.getElementById('days2').textContent = daysStr[1];
+            document.getElementById('days3').textContent = daysStr[2];
             document.getElementById('hours1').textContent = hoursStr[0];
             document.getElementById('hours2').textContent = hoursStr[1];
             document.getElementById('minutes1').textContent = minutesStr[0];
